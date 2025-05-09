@@ -48,8 +48,7 @@ function renderBoard() {
     });
 }
 
-//Atualizar a estrutura (data) depois do drag & drop
-
+// Atualizar a estrutura (data) depois do drag & drop
 function updateDataFromDOM() {
     const newData = [];
     document.querySelectorAll('.list').forEach(listEl => {
@@ -64,41 +63,37 @@ function updateDataFromDOM() {
     saveData();
 }
 
-//Adicionar nova Lista
+// Adicionar nova Lista
 addListBtn.addEventListener('click', () => {
-    const title = prompt('nome da lista:')
+    const title = prompt('Nome da lista:');
     if (title) {
-        data.push({ title, cards: [] })
-        saveData()
-        renderBoard()
+        data.push({ title, cards: [] });
+        saveData();
+        renderBoard();
     }
-})
+});
 
-
-//editar lista
+// Editar lista
 function editList(listIndex) {
-    const newTitle = prompt('novo nome da lista', data[listIndex].title)
+    const newTitle = prompt('Novo nome da lista', data[listIndex].title);
     if (newTitle) {
-        data[listIndex].title = newTitle
-        saveData()
-        renderBoard()
-
+        data[listIndex].title = newTitle;
+        saveData();
+        renderBoard();
     }
 }
 
-//excluir lista
+// Excluir lista
 function deleteList(listIndex) {
-if(confirm('Tem certeza de deseja excluir esss Lista? ')) {
-    data.splice(listIndex, 1)
-    saveData()
-    renderBoard()
+    if (confirm('Tem certeza de que deseja excluir esta lista?')) {
+        data.splice(listIndex, 1);
+        saveData();
+        renderBoard();
     }
 }
 
-
-//Editar card
-
-window.addCard = function(listIndex) {
+// Adicionar card
+function addCard(listIndex) {
     const text = prompt('Nome do novo card:');
     if (text) {
         data[listIndex].cards.push(text);
@@ -107,16 +102,24 @@ window.addCard = function(listIndex) {
     }
 }
 
-
-//Excluir card
-
-function deleteCard(listIndex,cardIndex) {
-    if (confirm('Tem certeza de que deseja excluir este card?')) {
-        data[listIndex].cards.splice(cardIndex, 1)
-        saveData()
-        renderBoard()
+// Editar card
+function editCard(listIndex, cardIndex) {
+    const newText = prompt('Editar conteúdo do card', data[listIndex].cards[cardIndex]);
+    if (newText) {
+        data[listIndex].cards[cardIndex] = newText;
+        saveData();
+        renderBoard();
     }
 }
 
-// inicializa 
-renderBoard()
+// Excluir card
+function deleteCard(listIndex, cardIndex) {
+    if (confirm('Tem certeza de que deseja excluir este card?')) {
+        data[listIndex].cards.splice(cardIndex, 1);
+        saveData();
+        renderBoard();
+    }
+}
+
+// Inicializa
+renderBoard();

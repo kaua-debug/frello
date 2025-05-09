@@ -1,59 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
 body {
     font-family: Arial, sans-serif;
-    background: #f4f4f4;
-    margin: 0;
+    background: #0080ff;
+    margin: #333;
+    line-height: 1.5;
     padding: 0;
 }
 
 
 header {
-    background: #026aa7;
-    color: white;
+    background: #0080ff;
+    color: rgb(255, 255, 255);
     padding: 1rem;
-    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-bottom: 2px solid  #000000;
 }
+
+header h1 {
+    font-size: 2.2rem;
+    letter-spacing: 1px;
+}
+
+header h2 {
+    font-size: 1.1rem;
+    color: #e2f1f8;
+}
+
 
 #board {
     display: flex;
     gap: 1rem;
-    padding: 1rem;
+    padding: 1.5rem;
     overflow-x: auto;
+    max-width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    transition: all 0.3s ease-in-out;
 }
 
 .list {
-    background: #ebecf0;
-    padding: 10px;
-    border-radius: 5px;
-    min-width: 250px;
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    min-width: 280px;
     display: flex;
     flex-direction: column;
     max-height: 80vh;
     overflow-y: auto;
+    box-shadow: 0 4px 10px rgba(255, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
+.list:hover {
+    transform: scale(1.05);
+}
 
 .list h3 {
-    margin-top: 0;
+    margin: 0 0 1rem;
+    font-size: 1.4rem;
+    font-weight: 600;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color: #026aa7;
 }
 
+.list .list-actions {
+    display: flex;
+    gap: 5px;
+}
 
 .card {
-    background: white;
-    margin: 5px 0;
-    padding: 10px;
-    border-radius: 3px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    background: #ffffff;
+    margin: 10px 0;
+    padding: 12px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     cursor: grab;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .card-text {
     flex: 1;
+    font-size: 1rem;
+    color: #000000;
+}
+
+.card-actions {
+    display: flex;
+    gap: 5px;
 }
 
 button {
@@ -62,13 +111,14 @@ button {
     cursor: pointer;
     border: none;
     border-radius: 5px;
-    background: #026aa7;
+    background: #00a2dc;
     color: white;
     font-size: 0.9rem;
+    transition: background 0.3s ease;
 }
 
 button:hover {
-    background: #005388;
+    background: #008cff;
 }
 
 .list-actions, .card-actions {
@@ -80,6 +130,10 @@ button:hover {
     margin-top: 5px;
 }
 
+.add-card-btn:hover {
+    background: #218838;
+}
+
 .delete-btn {
     background: #d9534f;
 }
@@ -89,9 +143,23 @@ button:hover {
 }
 
 .edit-btn {
-background:  #5bc0de;
+    background: #5bc0de;
 }
 
 .edit-btn:hover {
     background: #31b0d5;
 }
+
+@media (max-width: 768px) {
+    #board {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .list {
+        min-width: 100%;
+        max-height: none;
+    }
+}
+    
