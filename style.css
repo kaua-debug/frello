@@ -1,0 +1,97 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+
+header {
+    background: #026aa7;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+#board {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    overflow-x: auto;
+}
+
+.list {
+    background: #ebecf0;
+    padding: 10px;
+    border-radius: 5px;
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+
+.list h3 {
+    margin-top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.card {
+    background: white;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    cursor: grab;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-text {
+    flex: 1;
+}
+
+button {
+    padding: 10px 15px;
+    margin: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background: #026aa7;
+    color: white;
+    font-size: 0.9rem;
+}
+
+button:hover {
+    background: #005388;
+}
+
+.list-actions, .card-actions {
+    display: flex;
+    gap: 5px;
+}
+
+.add-card-btn {
+    margin-top: 5px;
+}
+
+.delete-btn {
+    background: #d9534f;
+}
+
+.delete-btn:hover {
+    background: #c9302c;
+}
+
+.edit-btn {
+background:  #5bc0de;
+}
+
+.edit-btn:hover {
+    background: #31b0d5;
+}
