@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -14,7 +13,6 @@ body {
     line-height: 1.5;
     overflow: hidden;
 }
-
 
 header {
     background: #111;
@@ -55,16 +53,13 @@ header h2 {
 
 /* Lista */
 .list {
-    background: #1c1c1c;
-    padding: 15px;
-    border-radius: 12px;
-    min-width: 280px;
-    display: flex;
-    flex-direction: column;
-    max-height: 80vh;
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px;
+    width: 220px;
+    max-height: 85vh;
     overflow-y: auto;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .list:hover {
@@ -73,14 +68,11 @@ header h2 {
 }
 
 .list h3 {
-    margin: 0 0 1rem;
-    font-size: 1.6rem;
-    font-weight: 600;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: #00d4ff;
-    text-shadow: 0 0 5px rgba(0, 212, 255, 0.7);
+    font-size: 16px;
+    margin-bottom: 8px;
 }
 
 /* Ações da Lista */
@@ -89,17 +81,16 @@ header h2 {
     gap: 8px;
 }
 
+/* Card */
 .card {
-    background: #222;
-    margin: 10px 0;
-    padding: 12px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    cursor: grab;
+    background-color: #2a2a2a;
+    border-radius: 6px;
+    padding: 6px 8px;
+    margin-bottom: 6px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-size: 13px;
 }
 
 .card:hover {
@@ -109,25 +100,27 @@ header h2 {
 
 .card-text {
     flex: 1;
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     color: #fff;
+    margin-right: 6px;
+    word-break: break-word;
 }
 
 .card-actions {
     display: flex;
-    gap: 8px;
+    gap: 6px;
 }
 
 /* Botões */
 button {
-    padding: 12px 18px;
-    margin: 10px;
+    padding: 6px 10px;
+    margin: 6px;
     cursor: pointer;
     border: none;
-    border-radius: 8px;
+    border-radius: 6px;
     background: linear-gradient(145deg, #00d4ff, #008cff);
     color: white;
-    font-size: 1rem;
+    font-size: 0.9rem;
     text-shadow: 0 0 5px rgba(0, 212, 255, 0.6);
     box-shadow: 0 4px 12px rgba(0, 212, 255, 0.3);
     transition: all 0.3s ease;
@@ -144,14 +137,19 @@ button:active {
 }
 
 /* Ações de Card e Lista */
-.list-actions, .card-actions {
-    display: flex;
-    gap: 8px;
+.list-actions button,
+.card-actions button {
+    padding: 6px 8px;
+    font-size: 0.8rem;
+    border-radius: 6px;
 }
 
 .add-card-btn {
     margin-top: 5px;
     background: #00a65d;
+    padding: 6px 10px;
+    font-size: 0.85rem;
+    border-radius: 6px;
 }
 
 .add-card-btn:hover {
@@ -230,13 +228,13 @@ button:active {
 }
 
 .modal-content button {
-  padding: 12px 18px;
-  border: none;
-  border-radius: 8px;
-  margin-right: 15px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s ease;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 8px;
+    margin-right: 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
 }
 
 #modal-save {
@@ -250,37 +248,25 @@ button:active {
 }
 
 #modal-cancel {
-  background-color: #555;
-  color: #fff;
+    background-color: #555;
+    color: #fff;
 }
 
 #modal-cancel:hover {
-  background-color: #444;
-  transform: translateY(-3px);
+    background-color: #444;
+    transform: translateY(-3px);
 }
 
 /* Animação de entrada */
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-    #board {
-        flex-direction: column;
-        align-items: center;
-        gap: 2rem;
+    from {
+        opacity: 0;
+        transform: scale(0.9);
     }
-
-    .list {
-        min-width: 100%;
-        max-height: none;
+    to {
+        opacity: 1;
+        transform: scale(1);
     }
 }
+
+/* Respons*
