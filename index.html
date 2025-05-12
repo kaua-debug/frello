@@ -22,6 +22,20 @@
         <button id="addListBtn">+ Nova Lista</button>
     </main>
 
+        <!--modal para adicionar/editar lista/card -->
+        <div id="modal" class="hidden">
+            <div class="modal-content">
+                <h3 id="modal-title"></h3>
+                <input 
+                type="text" 
+                id="modal-input"
+                placeholder="Digite aqui..."
+                >
+                <button id="modal-save">Salvar</button>
+               <button id="modal-cancel">Cancelar</button>
+            </div>
+        </div>
+
     <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
     <script src="app.js"></script>
 </body>
