@@ -7,6 +7,7 @@ const modalInput = document.getElementById('modal-input');
 const modalSave = document.getElementById('modal-save');
 const modalCancel = document.getElementById('modal-cancel');
 
+
 // Recuperação dos dados do localStorage ou inicialização de um array vazio
 let data = JSON.parse(localStorage.getItem('trelloData')) || [];
 
@@ -155,8 +156,12 @@ function deleteList(listIndex) {
 // Função para adicionar um novo card a uma lista
 function addCard(listIndex) {
     const text = modalInput.value.trim();
+    const priority = document.getElementById('priority').value;
+    const dueDate = document.getElementById('modal-due-date').value;
+    const labelColor = document.getElementById('modal-label-color').value;
+
     if (text) {
-        data[listIndex].cards.push({ text, done: false });
+        data[listIndex].cards.push({ text, done: false, priority, dueDate, labelColor });
         saveData();
         renderBoard();
         closeModal();
@@ -166,8 +171,16 @@ function addCard(listIndex) {
 // Função para editar o texto de um card existente
 function editCard(listIndex, cardIndex) {
     const newText = modalInput.value.trim();
+    const priority = document.getElementById('priority').value;
+    const dueDate = document.getElementById('modal-due-date').value;
+    const labelColor = document.getElementById('modal-label-color').value;
+
     if (newText) {
-        data[listIndex].cards[cardIndex].text = newText;
+        const card = data[listIndex].cards[cardIndex];
+        card.text = newText;
+        card.priority = priority;
+        card.dueDate = dueDate;
+        card.labelColor = labelColor;
         saveData();
         renderBoard();
         closeModal();
@@ -207,6 +220,8 @@ function updateDataFromDOM() {
     data = newData;
     saveData();
 }
+
+    //data[listIndex].cards.push({ text, done: false });
 
 // Inicialização do aplicativo
 addListBtn.addEventListener('click', () => openModal('addList'));

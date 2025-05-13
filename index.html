@@ -12,7 +12,8 @@
         <h1>Mini Trello Clone 🚀</h1>
         <h2>Mini trello - kauã debug</h2>
     </header>
-    
+    <link rel="icon" href="/img/favicon.png" type="image/png">
+
 
     <main>
         <section id="board">
@@ -36,9 +37,20 @@
                 id="modal-due-date" 
                 class="modal-input" 
                 />
+                <input type="color" id="modal-label-color" class="modal-input" value="#00d4ff"
+                >
+                <label for="priority">Prioridade:</label>
+            <select id="priority" name="priority">
+                <option value="low">Baixa</option>
+                <option value="medium">Média</option>
+                <option value="high">Alta</option>
+            </select>
 
                 <button id="modal-save">Salvar</button>
                <button id="modal-cancel">Cancelar</button>
+
+
+
             </div>
         </div>
 
